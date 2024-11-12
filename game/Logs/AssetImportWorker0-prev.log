@@ -22,7 +22,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51084
+49326
 -job-worker-count
 1
 -background-job-worker-count
@@ -68,7 +68,7 @@ Successfully changed project path to: /Users/macbook/Documents/unity/game/game
     "memorysetup-temp-allocator-size-gfx=262144"
 Player connection [140704280414080]  Target information:
 
-Player connection [140704280414080]  * "[IP] 192.168.0.2 [Port] 0 [Flags] 2 [Guid] 4130948219 [EditorId] 4130948219 [Version] 1048832 [Id] OSXEditor(0,polina💗) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [140704280414080]  * "[IP] 192.168.0.2 [Port] 0 [Flags] 2 [Guid] 111496850 [EditorId] 111496850 [Version] 1048832 [Id] OSXEditor(0,polina💗) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [140704280414080] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [140704280414080] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -82,7 +82,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 61.07 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 15.29 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.21f1 (e2bacb8dee3a)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -97,45 +97,45 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56346
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56722
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.008235 seconds.
-- Loaded All Assemblies, in  2.273 seconds
+Registered in 0.021294 seconds.
+- Loaded All Assemblies, in  4.012 seconds
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.117 seconds
-Domain Reload Profiling: 4390ms
-	BeginReloadAssembly (836ms)
+- Finished resetting the current domain, in  2.772 seconds
+Domain Reload Profiling: 6774ms
+	BeginReloadAssembly (1201ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (223ms)
-	RebuildNativeTypeToScriptingClass (79ms)
-	initialDomainReloadingComplete (237ms)
-	LoadAllAssembliesAndSetupDomain (895ms)
-		LoadAssemblies (842ms)
+	RebuildCommonClasses (498ms)
+	RebuildNativeTypeToScriptingClass (108ms)
+	initialDomainReloadingComplete (539ms)
+	LoadAllAssembliesAndSetupDomain (1655ms)
+		LoadAssemblies (1228ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (874ms)
-			TypeCache.Refresh (867ms)
-				TypeCache.ScanAssembly (805ms)
-			BuildScriptInfoCaches (1ms)
+		AnalyzeDomain (1605ms)
+			TypeCache.Refresh (1596ms)
+				TypeCache.ScanAssembly (1446ms)
+			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (2120ms)
+	FinalizeReload (2773ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1881ms)
+		SetupLoadedEditorAssemblies (2377ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (215ms)
-			SetLoadedEditorAssemblies (26ms)
-			BeforeProcessingInitializeOnLoad (33ms)
-			ProcessInitializeOnLoadAttributes (1329ms)
-			ProcessInitializeOnLoadMethodAttributes (266ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (1ms)
+			InitializePlatformSupportModulesInManaged (335ms)
+			SetLoadedEditorAssemblies (24ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (1297ms)
+			ProcessInitializeOnLoadMethodAttributes (651ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
@@ -143,98 +143,98 @@ Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  4.939 seconds
-Refreshing native plugins compatible for Editor in 20.60 ms, found 2 plugins.
+- Loaded All Assemblies, in 11.197 seconds
+Refreshing native plugins compatible for Editor in 26.76 ms, found 2 plugins.
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 7.89 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 10.69 ms, found 2 plugins.
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  6.133 seconds
-Domain Reload Profiling: 11069ms
-	BeginReloadAssembly (1959ms)
+- Finished resetting the current domain, in  8.099 seconds
+Domain Reload Profiling: 19293ms
+	BeginReloadAssembly (5236ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (14ms)
+		DisableScriptedObjects (35ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (116ms)
-	RebuildCommonClasses (118ms)
-	RebuildNativeTypeToScriptingClass (37ms)
-	initialDomainReloadingComplete (99ms)
-	LoadAllAssembliesAndSetupDomain (2721ms)
-		LoadAssemblies (2525ms)
+		CreateAndSetChildDomain (194ms)
+	RebuildCommonClasses (319ms)
+	RebuildNativeTypeToScriptingClass (90ms)
+	initialDomainReloadingComplete (305ms)
+	LoadAllAssembliesAndSetupDomain (5242ms)
+		LoadAssemblies (3311ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (885ms)
-			TypeCache.Refresh (627ms)
-				TypeCache.ScanAssembly (574ms)
-			BuildScriptInfoCaches (221ms)
-			ResolveRequiredComponents (27ms)
-	FinalizeReload (6135ms)
+		AnalyzeDomain (2678ms)
+			TypeCache.Refresh (1913ms)
+				TypeCache.ScanAssembly (1785ms)
+			BuildScriptInfoCaches (616ms)
+			ResolveRequiredComponents (106ms)
+	FinalizeReload (8101ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (4988ms)
+		SetupLoadedEditorAssemblies (6072ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (15ms)
-			SetLoadedEditorAssemblies (48ms)
-			BeforeProcessingInitializeOnLoad (483ms)
-			ProcessInitializeOnLoadAttributes (3417ms)
-			ProcessInitializeOnLoadMethodAttributes (1013ms)
-			AfterProcessingInitializeOnLoad (11ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (32ms)
+			BeforeProcessingInitializeOnLoad (614ms)
+			ProcessInitializeOnLoadAttributes (3823ms)
+			ProcessInitializeOnLoadMethodAttributes (1566ms)
+			AfterProcessingInitializeOnLoad (20ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (14ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
 Launching external process: /Applications/Unity/Hub/Editor/6000.0.21f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.34 seconds
-Refreshing native plugins compatible for Editor in 10.96 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.27 seconds
+Refreshing native plugins compatible for Editor in 22.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 199 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7103 unused Assets / (4.8 MB). Loaded Objects now: 7824.
-Memory consumption went from 185.0 MB to 180.1 MB.
-Total: 84.216555 ms (FindLiveObjects: 26.576217 ms CreateObjectMapping: 2.071938 ms MarkObjects: 37.811194 ms  DeleteObjects: 17.755150 ms)
+Unloading 198 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7103 unused Assets / (3.2 MB). Loaded Objects now: 7822.
+Memory consumption went from 184.8 MB to 181.7 MB.
+Total: 52.818325 ms (FindLiveObjects: 2.533672 ms CreateObjectMapping: 2.585219 ms MarkObjects: 42.016070 ms  DeleteObjects: 5.679732 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3043.574547 seconds.
-  path: Assets/Kevin Iglesias/Human Base Meshes/Models/HumanBaseMesh_Female.fbx
-  artifactKey: Guid(b4a78df37623594419bf022884020eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Kevin Iglesias/Human Base Meshes/Models/HumanBaseMesh_Female.fbx using Guid(b4a78df37623594419bf022884020eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a62295ed92c0cb95dbdfe4f637eb7471') in 4.443028159 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 151
+  Time since last request: 374.397760 seconds.
+  path: Assets/InputSystem_Actions.inputactions
+  artifactKey: Guid(052faaac586de48259a63d0c4782560b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem_Actions.inputactions using Guid(052faaac586de48259a63d0c4782560b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15be5ba4d5b2b3ffcc56475d7901d8b3') in 0.179684698 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000279 seconds.
-  path: Assets/Kevin Iglesias/Human Base Meshes
-  artifactKey: Guid(0802959f40069384fa33fb896538ec71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Kevin Iglesias/Human Base Meshes using Guid(0802959f40069384fa33fb896538ec71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b393e49bc704c30600da4ee7c8655118') in 0.002740075 seconds
+  Time since last request: 0.000126 seconds.
+  path: Assets/Readme.asset
+  artifactKey: Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '50ea5ad2cda8720781b90d71f311d8d1') in 0.023565765 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 144.044371 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd65b75f456837a3494a5e6e744543932') in 0.00109055 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/Kevin Iglesias/Human Base Meshes/Models/HumanBaseMesh_Male.fbx
-  artifactKey: Guid(c7116b6c825c8b845b17d603ecbe3177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Kevin Iglesias/Human Base Meshes/Models/HumanBaseMesh_Male.fbx using Guid(c7116b6c825c8b845b17d603ecbe3177) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf722e3acd4169b455ef661f6fdba138') in 0.423801825 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 150
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000138 seconds.
-  path: Assets/Kevin Iglesias/Human Base Meshes/Models
-  artifactKey: Guid(f690ff2d0e222214593af60ff66bac81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Kevin Iglesias/Human Base Meshes/Models using Guid(f690ff2d0e222214593af60ff66bac81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c91ec45925f6b35bb0cf6c6ddc4000d') in 0.007809162 seconds
+  Time since last request: 10.757847 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '092f7974db3fb175701bdf9959c1e23b') in 0.001140391 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/Kevin Iglesias/Human Base Meshes/Human Base Meshes.unity
-  artifactKey: Guid(8112063d97f9d004292007fc2177e4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Kevin Iglesias/Human Base Meshes/Human Base Meshes.unity using Guid(8112063d97f9d004292007fc2177e4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86d8a2c4c1b0239091722e0324f53b22') in 0.002071346 seconds
+  Time since last request: 61.525962 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c391582d739b6e62a5220f35cbb167ac') in 0.001632147 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 48.274409 seconds.
+  Time since last request: 16.278974 seconds.
   path: Assets/Scenes/New Scene.unity
   artifactKey: Guid(06fa3d48a9e754066a57da266110f66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/New Scene.unity using Guid(06fa3d48a9e754066a57da266110f66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f1882130c1418b30596cbd09f516a8c3') in 0.002146692 seconds
+Start importing Assets/Scenes/New Scene.unity using Guid(06fa3d48a9e754066a57da266110f66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15f613e3a3703fd2f1ca85291c8fa54a') in 0.001527092 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
