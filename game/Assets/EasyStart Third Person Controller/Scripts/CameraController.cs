@@ -27,15 +27,13 @@ public class CameraController : MonoBehaviour
 
     float mouseX;
     float mouseY;
-    float offsetDistanceY;
+    [SerializeField] float offsetDistanceY = 0;
 
-    Transform player;
+    [SerializeField] Transform root;
 
     void Start()
     {
-
-        player = GameObject.FindWithTag("Player").transform;
-        offsetDistanceY = transform.position.y;
+        //offsetDistanceY = transform.position.y;
 
         // Lock and hide cursor with option isn't checked
         if ( ! clickToMoveCamera )
@@ -51,7 +49,7 @@ public class CameraController : MonoBehaviour
     {
 
         // Follow player - camera offset
-        transform.position = player.position + new Vector3(0, offsetDistanceY, 0);
+        transform.position = root.position + new Vector3(0, offsetDistanceY, 0);
 
         // Set camera zoom when mouse wheel is scrolled
         if( canZoom && Input.GetAxis("Mouse ScrollWheel") != 0 )
