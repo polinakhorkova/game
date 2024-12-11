@@ -211,18 +211,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8bbf3697bd8e1342971dd1f27d5fa2c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 363182265}
-    - targetCorrespondingSourceObject: {fileID: -3338593742878317525, guid: f8bbf3697bd8e1342971dd1f27d5fa2c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 363182268}
   m_SourcePrefab: {fileID: 100100000, guid: f8bbf3697bd8e1342971dd1f27d5fa2c, type: 3}
 --- !u!1 &363182263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f8bbf3697bd8e1342971dd1f27d5fa2c, type: 3}
-  m_PrefabInstance: {fileID: 363182262}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &363182264 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3338593742878317525, guid: f8bbf3697bd8e1342971dd1f27d5fa2c, type: 3}
   m_PrefabInstance: {fileID: 363182262}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &363182265
@@ -288,29 +280,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 363182266}
   cameraTransform: {fileID: 1951600498}
-  animator: {fileID: 363182268}
---- !u!95 &363182268
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363182264}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74c3fbdd2529e674fbd189fa26f1cccf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  animator: {fileID: 363182271}
 --- !u!95 &363182271
 Animator:
   serializedVersion: 7
