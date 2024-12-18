@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 20f; // Скорость движения персонажа
+    public float moveSpeed = 40f; // Скорость движения персонажа
     public Rigidbody rb; // Rigidbody персонажа
-    public Transform cameraTransform; // Ссылка на камеру
+    public Transform FreeCamera; // Ссылка на камеру
     public Animator animator; // Ссылка на Animator
 
     private void Update()
@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");   // W/S или стрелки вверх/вниз
 
         // Направление относительно камеры
-        Vector3 cameraForward = cameraTransform.forward; // Направление камеры вперед
-        Vector3 cameraRight = cameraTransform.right;     // Направление камеры вправо
+        Vector3 cameraForward = FreeCamera.forward; // Направление камеры вперед
+        Vector3 cameraRight = FreeCamera.right;     // Направление камеры вправо
         cameraForward.y = 0; // Убираем наклон камеры
         cameraRight.y = 0;   // Убираем наклон камеры
         cameraForward.Normalize();
@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         // Направление относительно камеры
-        Vector3 cameraForward = cameraTransform.forward;
-        Vector3 cameraRight = cameraTransform.right;
+        Vector3 cameraForward = FreeCamera.forward;
+        Vector3 cameraRight = FreeCamera.right;
         cameraForward.y = 0;
         cameraRight.y = 0;
         cameraForward.Normalize();
