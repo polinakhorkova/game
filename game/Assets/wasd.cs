@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 40f; // Скорость движения персонажа
+    public float moveSpeed = 80f; // Скорость движения персонажа
     public Rigidbody rb; // Rigidbody персонажа
     public Transform FreeCamera; // Ссылка на камеру
     public Animator animator; // Ссылка на Animator
