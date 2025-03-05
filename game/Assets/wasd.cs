@@ -7,6 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform FreeCamera; // Ссылка на камеру
     public Animator animator; // Ссылка на Animator
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         // Получаем ввод с клавиатуры
@@ -33,25 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Передаем параметр Speed в Animator только если есть движение
         animator.SetFloat("Speed", movement.magnitude); // Убираем множитель на moveSpeed
-    }
-
-    private void FixedUpdate()
-    {
-        // Перемещаем персонажа
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-
-        // Направление относительно камеры
-        Vector3 cameraForward = FreeCamera.forward;
-        Vector3 cameraRight = FreeCamera.right;
-        cameraForward.y = 0;
-        cameraRight.y = 0;
-        cameraForward.Normalize();
-        cameraRight.Normalize();
-
-        Vector3 movement = (cameraForward * moveZ + cameraRight * moveX).normalized;
-
-        // Перемещение через Rigidbody
         rb.MovePosition(transform.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
