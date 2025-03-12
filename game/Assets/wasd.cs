@@ -7,11 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform FreeCamera; // Ссылка на камеру
     public Animator animator; // Ссылка на Animator
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+   
 
     private void Update()
     {

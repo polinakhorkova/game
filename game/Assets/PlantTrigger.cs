@@ -1,16 +1,43 @@
 using UnityEngine;
+using System.Collections;
 
-public class PlantTrigger : MonoBehaviour
+public class FlowerColorChange : MonoBehaviour
 {
-    public GameObject plant; // Это публичное поле для объекта растения
-    private bool playerNearby = false;
+    public Renderer flowerRenderer;  
+    public Color targetColor = Color.red;  
+    public float duration = 2f;  
+    public AudioClip changeSound;  
+
+    private Color startColor;  
+    private bool isChanging = false;  
+    private Material flowerMaterial;
+    private AudioSource audioSource;
+    private bool playerInRange = false; 
+    private ManaSystem playerMana; // 👈 Добавлено для проверки маны
+
+    void Start()
+    {
+        if (flowerRenderer == null)
+        {
+            flowerRenderer = GetComponent<Renderer>();
+        }
+        flowerMaterial = flowerRenderer.material;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        startColor = flowerMaterial.color;
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerNearby = true;
-            Debug.Log("Press E to restore the plant.");
+            playerInRange = true;
+            playerMana = other.GetComponent<ManaSystem>(); // 👈 Получаем ссылку на систему маны
         }
     }
 
@@ -18,36 +45,52 @@ public class PlantTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerNearby = false;
+            playerInRange = false;
+            playerMana = null;
         }
     }
 
     void Update()
     {
-        if (playerNearby && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isChanging) 
         {
-            RestorePlant();
-        }
-    }
-
-    private void RestorePlant()
-    {
-        // Изменяем цвет растения на зеленый
-        if (plant != null)
-        {
-            Renderer renderer = plant.GetComponent<Renderer>();
-            if (renderer != null)
+            if (playerMana != null && playerMana.currentMana >= 15) // 👈 Проверка маны
             {
-                renderer.material.color = new Color(0.5f, 0.7f, 0.2f);
-                Debug.Log("The plant has been restored!");
+                StartCoroutine(ChangeColor());
             }
             else
             {
-                Debug.LogWarning("No Renderer found on the plant!");
+                Debug.Log("Недостаточно маны для взаимодействия с цветком!");
             }
         }
+    }
 
-        // Отключаем триггер после выполнения действия
-        gameObject.SetActive(false);
+    IEnumerator ChangeColor()
+    {
+        isChanging = true;
+        float timeElapsed = 0f;
+        Color currentColor = flowerMaterial.color;
+
+        flowerMaterial.EnableKeyword("_EMISSION");
+
+        if (changeSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(changeSound);
+        }
+
+        while (timeElapsed < duration)
+        {
+            Color lerpedColor = Color.Lerp(currentColor, targetColor, timeElapsed / duration);
+            flowerMaterial.color = lerpedColor;
+            flowerMaterial.SetColor("_EmissionColor", lerpedColor * 2f);
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        flowerMaterial.color = targetColor;
+        flowerMaterial.SetColor("_EmissionColor", targetColor * 3f);
+
+        isChanging = false;
     }
 }
