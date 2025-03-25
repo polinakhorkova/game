@@ -11,7 +11,7 @@ public class PickableItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            playerMana = other.GetComponent<ManaSystem>(); // Получаем систему маны
+            playerMana = other.GetComponent<ManaSystem>(); // Получаем ссылку на систему маны
         }
     }
 
@@ -31,7 +31,7 @@ public class PickableItem : MonoBehaviour
             if (playerMana != null)
             {
                 playerMana.RestoreMana(manaRestoreAmount);
-                Destroy(gameObject); // Удаляем яблоко
+                Destroy(gameObject); // Удаляем предмет после подбора
             }
         }
     }

@@ -20,7 +20,7 @@ public class ManaSystem : MonoBehaviour
 
     public void UseMana(float amount)
     {
-        currentMana = Mathf.Max(currentMana - amount, 20);
+        currentMana = Mathf.Max(currentMana - amount, 10);
         UpdateManaUI();
     }
 
