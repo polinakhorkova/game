@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -79,6 +78,7 @@ public class CardController : MonoBehaviour
                 PrimeTween.Sequence.Create()
                     .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one*1.2f, 0.2f, ease: PrimeTween.Ease.OutBack))
                     .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one, 0.1f));
+                gridTransform.parent.gameObject.SetActive(false); //условие завершения уровня, скрываю весь GameObject.transform
             }
         }
         else
