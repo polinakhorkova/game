@@ -1480,6 +1480,7 @@ MonoBehaviour:
   rb: {fileID: 363182266}
   FreeCamera: {fileID: 2083858225}
   animator: {fileID: 363182271}
+  canMove: 1
 --- !u!95 &363182271
 Animator:
   serializedVersion: 7
