@@ -1,56 +1,84 @@
-
 using UnityEngine;
-using UnityEngine.UI; // Подключаем работу с UI
 
-public class MemoryGameTrigger : MonoBehaviour
+public class MiniGameTrigger : MonoBehaviour
 {
-    public GameObject PromptText; // Ссылка на текст
     public GameObject MemoryGame;
-    private bool isPlayerNearby = false;
+    public GameObject hintUI;
+    private PlayerMovement playerMovement;
+    private bool isGameCompleted = false;
+    private bool isPlayerInTrigger = false;
 
-    void Start()
+    private void Start()
     {
-        PromptText.SetActive(false); // Скрываем текст при старте
-       MemoryGame.SetActive(false);
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        if (MemoryGame != null) MemoryGame.SetActive(false);
+        if (hintUI != null) hintUI.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.F) && !isGameCompleted)
         {
+            Debug.Log("F нажата, запуск мини-игры...");
             StartMiniGame();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TriggerEnter");
-        if (other.CompareTag("Player")) // Если игрок входит в зону
+        if (other.CompareTag("Player") && !isGameCompleted)
         {
-            PromptText.SetActive(true);
-            isPlayerNearby = true;
+            Debug.Log("Игрок в триггере!");
+            isPlayerInTrigger = true;
+            if (hintUI != null) hintUI.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) // Если игрок уходит
+        if (other.CompareTag("Player"))
         {
-            PromptText.SetActive(false);
-            isPlayerNearby = false;
+            Debug.Log("Игрок вышел из триггера!");
+            isPlayerInTrigger = false;
+            if (hintUI != null) hintUI.SetActive(false);
         }
     }
 
     public void StartMiniGame()
     {
+        if (MemoryGame == null)
+        {
+            Debug.LogError("MemoryGame не назначен!");
+            return;
+        }
+
         MemoryGame.SetActive(true);
-        //Time.timeScale = 0f;
-        PromptText.SetActive(false);
+        if (playerMovement != null) playerMovement.canMove = false;
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
+        var miniGame = MemoryGame.GetComponent<IMiniGame>();
+        if (miniGame != null) miniGame.OnGameEnded += EndMiniGame;
     }
 
-    public void EndMiniGame()
+    public void EndMiniGame(bool isWin)
     {
-        MemoryGame.SetActive(false);
-        Time.timeScale = 1f;
+        if (MemoryGame != null) MemoryGame.SetActive(false);
+        if (playerMovement != null) playerMovement.canMove = true;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
+        if (isWin) isGameCompleted = true;
+        
+        var miniGame = MemoryGame.GetComponent<IMiniGame>();
+        if (miniGame != null) miniGame.OnGameEnded -= EndMiniGame;
     }
+    
+}
+
+public interface IMiniGame
+{
+    event System.Action<bool> OnGameEnded;
 }

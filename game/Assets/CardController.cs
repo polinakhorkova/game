@@ -8,6 +8,7 @@ public class CardController : MonoBehaviour
     [SerializeField] Card cardPrefab;
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
+     private PlayerMovement playerMovement;
 
     private List<Sprite> spritePairs;
 
@@ -16,11 +17,13 @@ public class CardController : MonoBehaviour
 
     int matchCounts;
 
-    private void Start()
+     private void Start()
     {
+        playerMovement = FindObjectOfType<PlayerMovement>(); // <-- Добавляем эту строку
         PrepareSprites();
         CreateCards();
     }
+
 
     private void PrepareSprites()
     {
@@ -79,6 +82,12 @@ public class CardController : MonoBehaviour
                     .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one*1.2f, 0.2f, ease: PrimeTween.Ease.OutBack))
                     .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one, 0.1f));
                 gridTransform.parent.gameObject.SetActive(false); //условие завершения уровня, скрываю весь GameObject.transform
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                if (playerMovement != null)
+                {
+                    playerMovement.canMove = true;
+                }
             }
         }
         else
