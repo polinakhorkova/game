@@ -7,6 +7,7 @@ public class FlowerColorChange : MonoBehaviour
     public Color targetColor = Color.red;  
     public float duration = 2f;  
     public AudioClip changeSound;  
+    public GameObject hintUI; // UI-подсказка
 
     private Color startColor;  
     private bool isChanging = false;  
@@ -25,7 +26,6 @@ public class FlowerColorChange : MonoBehaviour
         }
         flowerMaterial = flowerRenderer.material;
 
-        // Добавляем или находим AudioSource
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -33,6 +33,11 @@ public class FlowerColorChange : MonoBehaviour
         }
 
         startColor = flowerMaterial.color;
+
+        if (hintUI != null) 
+        {
+            hintUI.SetActive(false); // Убеждаемся, что UI скрыт при старте
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -40,7 +45,12 @@ public class FlowerColorChange : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            playerMana = other.GetComponent<ManaSystem>(); 
+            playerMana = other.GetComponent<ManaSystem>();
+
+            if (hintUI != null)
+            {
+                hintUI.SetActive(true); // Показываем UI
+            }
         }
     }
 
@@ -50,6 +60,11 @@ public class FlowerColorChange : MonoBehaviour
         {
             playerInRange = false;
             playerMana = null;
+
+            if (hintUI != null)
+            {
+                hintUI.SetActive(false); // Скрываем UI
+            }
         }
     }
 
@@ -57,14 +72,12 @@ public class FlowerColorChange : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isChanging) 
         {
-            // Проверяем, завершился ли диалог
             if (!DialogueControl.instance.IsDialogueFinished()) 
             {
                 Debug.Log("Сначала нужно завершить диалог!");
-                return; // Блокируем изменение цвета
+                return; 
             }
 
-            // Проверяем, хватает ли маны
             if (playerMana != null && playerMana.currentMana >= requiredMana)
             {
                 playerMana.UseMana(requiredMana); 
@@ -85,7 +98,6 @@ public class FlowerColorChange : MonoBehaviour
 
         flowerMaterial.EnableKeyword("_EMISSION");
 
-        // Воспроизводим звук изменения цвета
         if (changeSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(changeSound);
