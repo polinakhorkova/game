@@ -74,6 +74,7 @@ public class MiniGameTrigger : MonoBehaviour
         
         var miniGame = MemoryGame.GetComponent<IMiniGame>();
         if (miniGame != null) miniGame.OnGameEnded -= EndMiniGame;
+        Destroy(gameObject);
         
     } 
     

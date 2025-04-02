@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.OSX;
 
 public class CardController : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class CardController : MonoBehaviour
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
      private PlayerMovement playerMovement;
+
+    [SerializeField] GameObject memoryGame;
+
+    [SerializeField] MiniGameTrigger memoryGameTrigger;
 
     private List<Sprite> spritePairs;
 
@@ -87,7 +92,9 @@ public class CardController : MonoBehaviour
                 if (playerMovement != null)
                 {
                     playerMovement.canMove = true;
-                }
+}              memoryGameTrigger.EndMiniGame(true);
+            
+               Destroy(memoryGame);
             }
         }
         else
