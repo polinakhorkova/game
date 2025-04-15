@@ -7677,7 +7677,8 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: f5db9f2a53da969448bcc2934826afbb, type: 3}
   - {fileID: 21300000, guid: 2ee0135c1cefbf5489c55d9cbda90590, type: 3}
-  - {fileID: 21300000, guid: f66accb577dab984faa72f743a466753, type: 3}
+  - {fileID: 21300000, guid: 98d2b98c4ce793a469e752ecc5b97c5d, type: 3}
+  - {fileID: 21300000, guid: cdd37fe83e5950e4eb26b50ce8dd8032, type: 3}
   memoryGame: {fileID: 927958106}
   memoryGameTrigger: {fileID: 1837497568}
 --- !u!4 &926339741
@@ -24347,6 +24348,18 @@ PrefabInstance:
     - target: {fileID: 704830599748452154, guid: 4ff823d643769f6408a9d65213c248b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171428306656237409, guid: 4ff823d643769f6408a9d65213c248b5, type: 3}
+      propertyPath: m_CellSize.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171428306656237409, guid: 4ff823d643769f6408a9d65213c248b5, type: 3}
+      propertyPath: m_CellSize.y
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171428306656237409, guid: 4ff823d643769f6408a9d65213c248b5, type: 3}
+      propertyPath: m_ConstraintCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8089869738244514335, guid: 4ff823d643769f6408a9d65213c248b5, type: 3}
       propertyPath: m_Name
