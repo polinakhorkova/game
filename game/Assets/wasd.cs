@@ -41,4 +41,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.magnitude); // Убираем множитель на moveSpeed
         rb.MovePosition(transform.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+    private void Awake()
+{
+    DontDestroyOnLoad(gameObject);
+}
 }

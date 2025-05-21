@@ -24,7 +24,11 @@ public class PlantTrigger : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
+=======
+        if (playerInRange && Input.GetKeyDown(KeyCode.F) && !isChanging) 
+>>>>>>> Stashed changes
         {
             RestorePlant();
         }

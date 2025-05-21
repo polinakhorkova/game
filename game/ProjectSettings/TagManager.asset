@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ggBoy
   - npc
+  - Button
+  - Cube
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Player
   - Post Processing
   - 
   - 

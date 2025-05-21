@@ -912,7 +912,6 @@ MonoBehaviour:
   m_Name: Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 3943065165285846986}
   - {fileID: -1342702632455277094}
   - {fileID: -3429955276677023717}
   - {fileID: 9127715229367045240}
@@ -1098,6 +1097,7 @@ MonoBehaviour:
   contribution:
     m_OverrideState: 1
     m_Value: 0
+<<<<<<< Updated upstream
 --- !u!114 &3943065165285846986
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1126,6 +1126,8 @@ MonoBehaviour:
   rounded:
     m_OverrideState: 1
     m_Value: 1
+=======
+>>>>>>> Stashed changes
 --- !u!114 &4543463919723338291
 MonoBehaviour:
   m_ObjectHideFlags: 3

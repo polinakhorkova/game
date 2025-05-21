@@ -14,6 +14,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/step1.unity
     guid: 33a269dfdf93bb847869ddd11c37c1d1
+  - enabled: 1
+    path: Assets/cave.unity
+    guid: 4cc6a9370eddeec4580907b184d516cc
+  - enabled: 1
+    path: Assets/1lvl/lvl0.unity
+    guid: d5bcad6eb7d9feb459894203574c3f22
+  - enabled: 1
+    path: Assets/1lvl/1lvl.unity
+    guid: 8451fac010ed4ef49874849ecd2ac6e6
+  - enabled: 1
+    path: Assets/1lvl/2lvl.unity
+    guid: 4bf8f211920ff5a48825277eef014624
+  - enabled: 1
+    path: Assets/1lvl/3lvl.unity
+    guid: 16a3c56f5121eb2409350da2d643b270
+  - enabled: 1
+    path: Assets/1lvl/4lvl.unity
+    guid: c1e848f059bddb74ab3dcfb2c60b7539
+  - enabled: 1
+    path: Assets/1lvl/5lvl.unity
+    guid: 1af1dd66c88bcc84a8744af2ae7e2894
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
